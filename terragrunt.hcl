@@ -26,7 +26,7 @@ generate "provider" {
   contents  = <<EOF
     provider "google" {
         project = "${local.env_vars.project_id}"
-        region  = "us-central1"
+        region  = "${local.env_vars.region}"
         # Optionally specify the path to the credentials file
         # credentials = "${get_parent_terragrunt_dir()}/..//secrets/gcp-credentials-${local.env_vars.project_id}.json"
     }
