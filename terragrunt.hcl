@@ -7,8 +7,8 @@ remote_state {
   backend = "gcs"
 
   config = {
-    bucket = "${local.env_vars.project_id}-tf-state" # Your GCS bucket name without the gs:// prefix
-    prefix = "${path_relative_to_include()}/state" # Organize state files within the bucket
+    bucket      = "${local.env_vars.project_id}-tf-state"                                                        # Your GCS bucket name without the gs:// prefix
+    prefix      = "${path_relative_to_include()}/state"                                                          # Organize state files within the bucket
     credentials = "${get_parent_terragrunt_dir()}/..//secrets/gcp-credentials-${local.env_vars.project_id}.json" # Path to your Google Cloud credentials file
   }
 
